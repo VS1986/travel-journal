@@ -15,6 +15,7 @@ module.exports = function Home({ login }) {
         <h1 className="title">
           <span>Путь в тысячу ли начинается с первого шага</span>
         </h1>
+       
         <Map />
         {/* <div id="map" className="map" /> */}
         {/* <div className="contact-block-map">

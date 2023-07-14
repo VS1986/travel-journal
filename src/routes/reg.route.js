@@ -14,7 +14,6 @@ regRoute.post('/', async (req, res) => {
   const {
     fullName, email, login, password,
   } = req.body;
-  console.log(`==========> `, req.body);
   try {
     const hash = await bcrypt.hash(password, 10);
     const user = await User.findOne({ where: { login } });
@@ -25,6 +24,7 @@ regRoute.post('/', async (req, res) => {
         fullName, email, login, password: hash,
       });
       req.session.login = newUser.login;
+      req.session.userId = newUser.id;
       req.session.save(() => {
         res.redirect('/');
       });

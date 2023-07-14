@@ -56,9 +56,13 @@ module.exports = function Navbar({ login }) {
                     !
                   </span>
                 </li>
-                {/* добавить Profile в условие, для отображения после регистрации */}
                 <li className="nav-item">
-                  <a className="nav-link" href="/posts">
+                  <a className="nav-link" href="/posts/newpost">
+                    Create post
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/posts/allposts">
                     Posts
                   </a>
                 </li>

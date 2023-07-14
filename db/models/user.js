@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(UsersPost, { foreignKey: 'user_id' });
       this.belongsToMany(UsersPost, {
         through: FavouritePost,
-        foreignKey: 'users_id',
+        foreignKey: 'user_id',
       });
     }
   }

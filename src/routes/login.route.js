@@ -17,6 +17,7 @@ loginRoute.post('/', async (req, res) => {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
         req.session.login = user.login;
+        req.session.userId = user.id;
         req.session.save(() => {
           // res.redirect('/');
           res.json({ msg: 'Login successful' });

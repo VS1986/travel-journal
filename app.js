@@ -19,6 +19,7 @@ const router = require('./src/routes/index.route');
 const regRoute = require('./src/routes/reg.route');
 const loginRoute = require('./src/routes/login.route');
 const logoutRoute = require('./src/routes/logout.route');
+const postRoute = require('./src/routes/posts.route');
 
 const app = express();
 const { PORT } = process.env;
@@ -47,6 +48,8 @@ app.use('/', router);
 app.use('/registration', secureRoute, regRoute);
 app.use('/login', secureRoute, loginRoute);
 app.use('/logout', logoutRoute);
+app.use('/posts', postRoute);
+// app.use('/new', postRoute);
 
 app.listen(PORT, () => {
   console.log(`Server started on PORT ${PORT}`);
